@@ -1,0 +1,339 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+html{
+	scroll-behavior: smooth;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;	
+    /* background: linear-gradient(to right, white, rgb(255, 123, 0),rgba(6, 173, 195, 0.794)); */
+    background-color: white;
+}
+
+/* * ============================== */
+/* * ============ HEADER ========== */
+/* * ============================== */
+
+.navbar {
+    background-color: rgba(6, 173, 195, 0.794); 
+	position: sticky;
+	top: 0;
+}
+
+.navbar a {
+	color: black;
+	display: inline-block;
+	padding: 3px;
+	width: 90%;
+	text-align: center;
+	color: white;
+	transition: .2s ease-out all;
+	border-radius: 30px;
+}
+
+.navbar a:hover {
+	background: rgb(255, 123, 0);
+	color: #fff;
+	text-decoration: none;
+}
+
+.contenedor {
+	max-width: 1000px;
+	width: 100%;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* * ============================== */
+/* * ===== CONTENEDOR IMAGEN ====== */
+/* * ============================== */
+
+.contenedor-imagen {
+	height: 90%;
+}
+
+.contenedor-imagen img {
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+	object-fit: cover;
+	object-position: 0 bottom;
+}
+
+/* * ============================== */
+/* * ============ MAIN ============ */
+/* * ============================== */
+
+main {
+	min-height: 100vh;
+}
+
+main .contenido p {
+	margin-bottom: 20px;
+	line-height: 30px;
+	color: #525151;
+}
+
+main .contenido .titulo {
+    font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	padding-top: 40px;
+}
+
+main .contenido .fecha {
+	font-size: 14px;
+	color: #B5B5B5;
+}
+
+/* * ============================== */
+/* * ============ ASIDE =========== */
+/* * ============================== */
+
+aside {
+	min-width: 30%;
+	margin: 40px 20px 20px 0;
+	height: 100%;
+	background: #1D2F3D;
+	padding: 20px;
+	border-radius: 3px;
+	position: sticky;
+	top: 20px;
+}
+
+aside .titulo {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #f2f2f2;
+}
+
+aside .indice a {
+	display: block;
+	margin-bottom: 10px;
+	color: #FFCD48;
+}
+
+/* * ============================== */
+/* * ========== FOOTER ============ */
+/* * ============================== */
+
+
+
+/* * ============================== */
+/* * ====== MEDIA QUERIES ========= */
+/* * ============================== */
+@media screen and (max-width: 900px){
+	.navbar .contenedor {
+		flex-wrap: wrap;
+		margin: 0;
+		width: 100%;
+	}
+
+	.navbar a {
+		width: auto;
+		flex: 1;
+	}
+
+	.contenedor-imagen {
+		height: 50vh;
+	}
+
+	main .contenedor {
+		flex-direction: column;
+	}
+	.aside{
+		position: static;
+	}
+}
+.color{
+	color: blue;
+}
+
+/*  */
+.linea{
+color: blue;
+}
+.estilo{
+	font-size: 20px;
+	color: black;
+}
+.estilo span{
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	font-size: 40px;
+	color: darkblue;
+} 
+/* ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ */
+/*     FORMULARIO     */
+/* ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡*/
+
+:root   {
+    --blanco: #ffffff;
+    --negro: #000;
+    --amarillo: #FFC107;
+    --azul: #0097A7;
+    --gris: #757575; /*estos son los colores que voy a utilizar en la pagina que quiero, utilizando (var) los selecciono*/
+    --degradado:#DFE9F3;
+}
+.formulario{
+    background-color: var(--gris);
+  width: min( 60rem, 100% );
+  margin: 0 auto; /*esta funcion sirve para centrar*/
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.formulario legend{
+    text-transform: uppercase; /*Esta funcion one el texto en mayuscula*/
+    color: var(--amarillo); /*esta funcion pone el color del texto*/
+    text-align: center; /*esta funcion pone el ttexto centrado*/
+    font-size: 18px; /*tamaño de fuente*/
+    font-weight: 700; /*esto es para que el texto este en negrita*/
+    margin-bottom: 2rem; /*esta funcion sieve para que se separe un poco el texto del imput*/
+
+}
+.formulario fieldset{
+    border: none;
+}
+@media(min-width: 768px){
+.contenedor-campos{
+ display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:auto auto 20rem;
+    column-gap: 5rem;
+ }
+}
+.campo:nth-child(3),
+    .campo:nth-child(3){
+    grid-column: 1 / 1;
+}
+.campo{
+margin-bottom: 2rem;
+}
+.campo label{
+color: var(--blanco);
+font-weight: bold;
+margin-bottom: .5rem;
+display: block;
+}
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem; 
+    border-radius: .5rem;
+}
+@media(min-width: 768px){
+    .enviar .boton{
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+    
+    }
+}
+.campo textarea{
+    width: 100%;
+height: 3rem;
+}
+.boton{
+    background-color: var(--azul);
+    color: var(--blanco);
+     padding: 1rem 3rem;
+     margin-top: 3rem;
+     font-size: 2rem; 
+     text-decoration: none;
+     text-transform: uppercase;
+     font-weight: bold;
+     width: 90%;
+     border-radius: .5rem;
+     text-align: center;  /*Esto se usa para crear un boton que este acorde con cel, pc, tablets desde css*/
+ }
+ @media(min-width: 760px){
+     .boton{
+     width: auto;  /*con esta propiedad ponemos el boton para que no se alargue ni se ponga chico*/
+     }
+ }
+ .boton:hover{
+     cursor: pointer;
+	background-color: rgba(6, 173, 195, 0.794)
+ }
+.final{
+    font-family: 'Akronim', cursive;
+    font-size: 50px;
+    font-weight:700;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        position: absolute;
+        /* top: 50%; */
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      ul li {
+        list-style: none;
+        margin: 0 15px;
+      }
+      
+      ul li a {
+        position: relative; 
+        display: block;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 63px;
+        background: black;
+        border-radius: 50%;
+        font-size: 30px;
+        color: rgba(6, 173, 195, 0.794);
+        transition: .5s;
+      }
+      
+      ul li a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #ffae00;
+        transition: .5s;
+        transform: scale(.9);
+        z-index: -1;
+      }
+      
+      ul li a:hover::before {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px #ffee10;
+      }
+      
+      ul li a:hover {
+        color: #ffee10;
+        box-shadow: 0 0 5px #ffee10;
+        text-shadow: 0 0 5px black;
+      
+     }
+
+     .grupo2{
+        background-color: rgb(255, 123, 0);
+        padding: 15px 10px;
+        text-align: center;
+        color: #000000;
+    }
+    
+    .grupo2 small{
+        font-size: 15px;
+    }

@@ -1,0 +1,230 @@
+:root   {
+    --blanco: #ffffff;
+    --negro: #000;
+    --amarillo: #FFC107;
+    --azul: #0097A7;
+    --gris: #757575; /*estos son los colores que voy a utilizar en la pagina que quiero, utilizando (var) los selecciono*/
+    --degradado:#DFE9F3;
+}
+/*globales*/
+@media(min-width: 760px){
+    html{
+        box-sizing: border-box;
+        font-size: 62%;  /*el tamaño que tendra latra de toda la pagina*/
+        scroll-snap-type: y mandatory;
+        
+    }
+}
+*,*:before,*:after {
+    box-sizing: inherit;
+}
+
+body{
+    background-image: url(img/img10.webp);
+    font-size: 16px; /* 1rem= 10px */
+    font-family: 'Krub', sans-serif; /*tipo de leta que llevara la pagina*/
+   
+}
+.logo{
+    display: flex;
+    justify-content:space-around;
+}    
+h1{
+    text-align: center;
+    font-size: 70.0px;
+    font-family: Bell MT; /*Letra que lleva el titulo, tamaño y centrado*/
+    
+}
+h1.titulo span{
+    font-size: 1rem;
+    color: blue;   /*llame la clase web atravez de la etiqueta span para cambiarla de tamaño y color*/
+}
+h2{
+    color: var(--blanco);
+    font-family:  Arial Black;
+}
+h1,h2,h3{
+    text-align: center;
+}
+.contenedor{
+    width: 120rem;
+    margin: 0 auto;
+    }
+    /*navegacion principal*/
+    .titulo{
+        color: blue;
+    }
+.nav-bg{
+    background-color: white;  /*color de fondo para la barra de inicio */
+}
+.navegacion-principal { 
+    display: flex;
+   flex-direction: column;  /*acomodar la navegacion izquierda a derecha*/
+}
+@media(min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;  /*con esta propieda la navegacion se acomoda a los diferentes aparatos eletronicos*/
+    }
+
+}
+.navegacion-principal a{
+    color: var(--negro);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 1rem; /*color de las letras de la navegacion, quitar la raya de abajo con tex decoration:none*/
+}
+.navegacion-principal a:hover{ 
+    background-color: var(--amarillo); /*la a se refiere a la etiqueta a href*/
+    color: var(--negro); /*cuando selecione inicio,contacto,cliente,sobre mi va aparecer de fondo el color amarillo*/
+}
+.boton{
+    background-color: var(--azul);
+    color: var(--blanco);
+     padding: 1rem 3rem;
+     margin-top: 3rem;
+     font-size: 2rem; 
+     text-decoration: none;
+     text-transform: uppercase;
+     font-weight: bold;
+     width: 90%;
+     border-radius: .5rem;
+     text-align: center;  /*Esto se usa para crear un boton que este acorde con cel, pc, tablets desde css*/
+ }
+ @media(min-width: 760px){
+     .boton{
+     width: auto;  /*con esta propiedad ponemos el boton para que no se alargue ni se ponga chico*/
+     }
+ }
+ .boton:hover{
+     cursor: pointer;
+ }
+ .formulario{
+    background-color: var(--gris);
+  width: min( 60rem, 100% );
+  margin: 0 auto; /*esta funcion sirve para centrar*/
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.formulario legend{
+    text-transform: uppercase; /*Esta funcion one el texto en mayuscula*/
+    color: var(--amarillo); /*esta funcion pone el color del texto*/
+    text-align: center; /*esta funcion pone el ttexto centrado*/
+    font-size: 18px; /*tamaño de fuente*/
+    font-weight: 700; /*esto es para que el texto este en negrita*/
+    margin-bottom: 2rem; /*esta funcion sieve para que se separe un poco el texto del imput*/
+
+}
+.formulario fieldset{
+    border: none;
+}
+@media(min-width: 768px){
+.contenedor-campos{
+ display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:auto auto 20rem;
+    column-gap: 5rem;
+ }
+}
+.campo:nth-child(3),
+    .campo:nth-child(4){
+    grid-column: 1 / 3;
+}
+.campo{
+margin-bottom: 1rem;
+}
+.campo label{
+color: var(--blanco);
+font-weight: bold;
+margin-bottom: .5rem;
+display: block;
+}
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem; 
+    border-radius: .5rem;
+}
+@media(min-width: 768px){
+    .enviar .boton{
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+    
+    }
+}
+.campo textarea{
+    width: 100%;
+height: 20rem;
+}
+.final{
+    font-family: 'Akronim', cursive;
+    font-size: 50px;
+    font-weight:700;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        position: absolute;
+        /* top: 50%; */
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      ul li {
+        list-style: none;
+        margin: 0 15px;
+      }
+      
+      ul li a {
+        position: relative; 
+        display: block;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 63px;
+        background: rgb(255, 255, 255);
+        border-radius: 50%;
+        font-size: 30px;
+        color: blue;
+        transition: .5s;
+      }
+      
+      ul li a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #ffae00;
+        transition: .5s;
+        transform: scale(.9);
+        z-index: -1;
+      }
+      
+      ul li a:hover::before {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px #ffee10;
+      }
+      
+      ul li a:hover {
+        color: #ffee10;
+        box-shadow: 0 0 5px #ffee10;
+        text-shadow: 0 0 5px black;
+      
+     }
+
+     .grupo2{
+        background-color: #2eadf7;
+        padding: 15px 10px;
+        text-align: center;
+        color: #000000;
+    }
+    
+    .grupo2 small{
+        font-size: 15px;
+    }
